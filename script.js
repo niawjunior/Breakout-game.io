@@ -27,7 +27,6 @@ for(c=0; c<brickColumnCount; c++){
         bricks[c][r] = {x: 0, y:0,status:1}
     }
 }
-
 document.addEventListener("keydown",keyDownHandler);
 document.addEventListener("keyup",keyUpHandler);
 
@@ -90,7 +89,7 @@ function collisionDetection(){
                     b.status = 0;
                     score++;
                     if(score == brickRowCount*brickColumnCount){
-                        alert("คุณชนะแล้ว");
+                        alert("YOU WIN!");
                         document.location.reload();
                     }
                 }
@@ -102,13 +101,13 @@ function collisionDetection(){
 function drawScore(){
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
-    ctx.fillText("คะแนน: "+score,8,20);
+    ctx.fillText("SCORE: "+score,8,20);
 }
 
 function drawLives(){
     ctx.font = "16px Arial";
     ctx.fillStyle = "#0095DD";
-    ctx.fillText("ชีวิต: "+lives,canvas.width-65,20);
+    ctx.fillText("LIVES: "+lives,canvas.width-65,20);
 }
 
 function draw() {
@@ -128,7 +127,7 @@ function draw() {
         }else{
        lives--;
        if(!lives){
-            alert("เสียใจด้วย! คุณแพ้แล้ว");
+            alert("SORRY! You Lose");
             document.location.reload();
        }else{
            x = canvas.width/2;

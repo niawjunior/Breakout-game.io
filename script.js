@@ -56,7 +56,6 @@ function keyDownHandler(e){
         leftPressed = true;
     }
 }
-
 function keyUpHandler(e){
     if(e.keyCode ==39){
         rightPressed = false;
@@ -65,11 +64,10 @@ function keyUpHandler(e){
         leftPressed = false;
     }
 }
-
 function drawBall() {
     ctx.beginPath();
     ctx.arc(x,y,ballRadius,0,Math.PI*2);
-    ctx.fillStyle = "#0095DD";
+    ctx.fillStyle = "red";
     ctx.fill();
     ctx.closePath();
 }
@@ -141,17 +139,15 @@ function draw() {
        }
         }
     }
-    if(x + dx > canvas.width-ballRadius || x + dx < ballRadius ){
+   if(x + dx > canvas.width-ballRadius || x + dx < ballRadius ){
         dx = -dx;
     }
-
    if(rightPressed && paddleX < canvas.width-paddleWidth) {
 		paddleX += 7;
 	}
 	else if(leftPressed && paddleX > 0) {
 		paddleX -= 7;
 	}
-
 	x += dx;
 	y += dy;
     requestAnimationFrame(draw);

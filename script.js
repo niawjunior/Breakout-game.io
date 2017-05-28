@@ -164,5 +164,4 @@ function mouseMoveHandler(e){
         paddleX = relativeX - paddleWidth/2;
     }
 }
-
 draw();
